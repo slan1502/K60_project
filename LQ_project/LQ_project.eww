@@ -4,6 +4,9 @@
   <project>
     <path>$WS_DIR$\build\proj01_LED\proj01_LED.ewp</path>
   </project>
+  <project>
+    <path>$WS_DIR$\build\proj02_PWM\proj02_PWM.ewp</path>
+  </project>
   <batchBuild/>
 </workspace>
 

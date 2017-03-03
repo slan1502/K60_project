@@ -300,6 +300,8 @@
           <state>$PROJ_DIR$\..\..\Chip\inc\IAR</state>
           <state>$PROJ_DIR$\..\..\Chip\inc\kinetis</state>
           <state>$PROJ_DIR$\..\..\Lib\CMSIS\Inc</state>
+          <state>$PROJ_DIR$\..\..\Lib\USB</state>
+          <state>$PROJ_DIR$\..\..\Lib\FatFs</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -1870,13 +1872,34 @@
       <name>$PROJ_DIR$\..\..\Chip\src\misc.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_adc.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_can.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_dac.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_dma.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_DWT.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_flash.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_flexbus.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_ftm.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_gpio.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_i2c.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_lptmr.c</name>
@@ -1891,10 +1914,22 @@
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_port.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_rtc.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_sdhc.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_spi.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_SysTick.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_uart.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Chip\src\MK60_usb.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\Chip\src\MK60_wdog.c</name>
@@ -1908,6 +1943,27 @@
     <file>
       <name>$PROJ_DIR$\..\..\Chip\src\vectors.c</name>
     </file>
+  </group>
+  <group>
+    <name>Lib</name>
+    <group>
+      <name>FatFs</name>
+      <file>
+        <name>$PROJ_DIR$\..\..\Lib\FatFs\diskio.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\Lib\FatFs\ff.c</name>
+      </file>
+    </group>
+    <group>
+      <name>USB</name>
+      <file>
+        <name>$PROJ_DIR$\..\..\Lib\USB\USB.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\Lib\USB\USB_CDC.c</name>
+      </file>
+    </group>
   </group>
 </project>
 
