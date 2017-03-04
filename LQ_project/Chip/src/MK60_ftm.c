@@ -485,14 +485,15 @@ void FTM_Input_init(FTMn_e ftmn, FTM_CHn_e ch, FTM_Input_cfg cfg,FTM_PS_e ps)
     FTM_STATUS_REG(FTMN[ftmn])  = 0x00;               //清中断标志位
 
     //开启输入捕捉中断
-    //enable_irq(FTM0_IRQn + ftmn);
+    FTM_IRQ_EN(ftmn, ch); //开启输入捕捉中断
+    //enable_irq(FTM0_IRQn + ftmn);//开中断
 }
 
 /*!
  *  @brief      FTM测试中断服务函数
  *  @since      v5.0
  *  @warning    此函数需要用户根据自己需求完成，这里仅仅是提供一个模版
- *  Sample usage:       set_vector_handler(FTM0_IRQn , FTM1_Input_test_handler);    //把 FTM1_Input_test_handler 函数添加到中断向量表，不需要我们手动调用
+ *  Sample usage:       set_vector_handler(FTM1_IRQn , FTM1_Input_test_handler);    //把 FTM1_Input_test_handler 函数添加到中断向量表，不需要我们手动调用
  */
 void FTM1_Input_test_handler(void)
 {
@@ -501,7 +502,7 @@ void FTM1_Input_test_handler(void)
 
     FTM1_STATUS = 0x00;             //清中断标志位
 
-    CHn = 0;
+    CHn = 4;
     if( s & (1 << CHn) )
     {
         //FTM_IRQ_DIS(FTM1, CHn);     //禁止输入捕捉中断
@@ -513,7 +514,7 @@ void FTM1_Input_test_handler(void)
     }
 
     /* 这里添加 n=1 的模版，根据模版来添加 */
-    CHn = 1;
+    CHn = 5;
     if( s & (1 << CHn) )
     {
         //FTM_IRQ_EN(FTM1, CHn); //开启输入捕捉中断

@@ -79,22 +79,22 @@ void dma_portx2buff_init(DMA_CHn CHn, void *SADDR, void *DADDR, PTXn_e ptxn, DMA
     uint8 BYTEs = (byten == DMA_BYTE1 ? 1 : (byten == DMA_BYTE2 ? 2 : (byten == DMA_BYTE4 ? 4 : 16 ) ) ); //计算传输字节数
 
     //断言，检测传递进来参数是否正确
-    ASSERT(                                             //用断言检测 源地址和每次传输字节数是否正确
-        (   (byten == DMA_BYTE1)                    //传输一个字节
-            && ( (SADDR >= &PTA_B0_IN) && (SADDR <= ( &PTE_B3_IN )))
-        )
-
-        || (   (byten == DMA_BYTE2)                   //传输两个字节(注意，不能跨端口)
-               && ( (SADDR >= &PTA_B0_IN)
-                    && (SADDR <= ( &PTE_W1_IN ))
-                    && (((uint32)SADDR & 0x03) != 0x03) )         //保证不跨端口
-           )
-
-        || (   (byten == DMA_BYTE4)                   //传输四个字节
-               && ((SADDR >= &PTA_B0_IN) && (SADDR <= ( &PTE_B0_IN )))
-               && (((uint32)SADDR & 0x03) == 0x00)           //保证不跨端口
-           )
-    );
+//    ASSERT(                                             //用断言检测 源地址和每次传输字节数是否正确
+//        (   (byten == DMA_BYTE1)                    //传输一个字节
+//            && ( (SADDR >= &PTA_B0_IN) && (SADDR <= ( &PTE_B3_IN )))
+//        )
+//
+//        || (   (byten == DMA_BYTE2)                   //传输两个字节(注意，不能跨端口)
+//               && ( (SADDR >= &PTA_B0_IN)
+//                    && (SADDR <= ( &PTE_W1_IN ))
+//                    && (((uint32)SADDR & 0x03) != 0x03) )         //保证不跨端口
+//           )
+//
+//        || (   (byten == DMA_BYTE4)                   //传输四个字节
+//               && ((SADDR >= &PTA_B0_IN) && (SADDR <= ( &PTE_B0_IN )))
+//               && (((uint32)SADDR & 0x03) == 0x00)           //保证不跨端口
+//           )
+//    );
 
     ASSERT(count < 0x8000); //断言，最大只支持0x7FFF
 
@@ -153,7 +153,7 @@ void dma_portx2buff_init(DMA_CHn CHn, void *SADDR, void *DADDR, PTXn_e ptxn, DMA
     port_init(ptxn, ALT1 | DMA_RISING);
 
     /*  配置输入源   */
-    dma_gpio_input_init(SADDR,BYTEs);
+    //dma_gpio_input_init(SADDR,BYTEs);
 
     DMA_DIS(CHn);                                    //使能通道CHn 硬件请求
     DMA_IRQ_CLEAN(CHn);

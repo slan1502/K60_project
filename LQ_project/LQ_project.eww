@@ -7,6 +7,12 @@
   <project>
     <path>$WS_DIR$\build\proj02_PWM\proj02_PWM.ewp</path>
   </project>
+  <project>
+    <path>$WS_DIR$\build\proj03_UART\proj03_UART.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\build\proj04_DMAcapture\proj04_DMAcapture.ewp</path>
+  </project>
   <batchBuild/>
 </workspace>
 

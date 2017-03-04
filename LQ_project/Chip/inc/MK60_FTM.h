@@ -83,9 +83,14 @@ typedef enum
 
 extern void FTM_Input_init(FTMn_e, FTM_CHn_e, FTM_Input_cfg,FTM_PS_e ps);   //输入捕捉初始化函数
 extern void FTM1_Input_test_handler(void);                      //可供参考的 FTM1 输入捕捉中断服务函数
+extern void FTM0_Input_test_handler(void);                      //可供参考的 FTM0 输入捕捉中断服务函数
 
 #define FTM_IRQ_EN(FTMn,CHn)        FTM_CnSC_REG(FTMN[FTMn],CHn) |= FTM_CnSC_CHIE_MASK       //开启 FTMn_CHn 中断
 #define FTM_IRQ_DIS(FTMn,CHn)       FTM_CnSC_REG(FTMN[FTMn],CHn) &= ~FTM_CnSC_CHIE_MASK      //关闭 FTMn_CHn 中断
+
+//设置两个全局变量 用于工程proj03_Capture
+extern uint32 get_cnt1, get_cnt2;
+extern uint32 get_cnt1_max, get_cnt2_matx;
 
 /*********************** 正交解码功能 **************************/
 extern void     FTM_QUAD_Init(FTMn_e ftmn);         //初始化FTM 的正交解码 功能
