@@ -13,6 +13,9 @@
   <project>
     <path>$WS_DIR$\build\proj04_DMAcapture\proj04_DMAcapture.ewp</path>
   </project>
+  <project>
+    <path>$WS_DIR$\build\proj05_QUAD\proj05_QUAD.ewp</path>
+  </project>
   <batchBuild/>
 </workspace>
 
